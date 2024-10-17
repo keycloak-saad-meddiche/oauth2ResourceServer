@@ -23,9 +23,9 @@ public class SecurityConfig {
 
         http.authorizeHttpRequests((authz) -> authz
                 .requestMatchers(HttpMethod.GET, "/api/hello").permitAll()
-                .requestMatchers(HttpMethod.GET, "/api/admin/**").hasRole(ADMIN.getValue())
-                .requestMatchers(HttpMethod.GET, "/api/user/**").hasRole(USER.getValue())
-                .requestMatchers(HttpMethod.GET, "/api/admin-and-user/**").hasAnyRole(ADMIN.getValue(),USER.getValue())
+                .requestMatchers(HttpMethod.GET, "/api/admin/**").hasRole(ADMIN.name())
+                .requestMatchers(HttpMethod.GET, "/api/user/**").hasRole(USER.name())
+                .requestMatchers(HttpMethod.GET, "/api/admin-and-user/**").hasAnyRole(ADMIN.name(),USER.name())
                 .anyRequest().authenticated()
         );
 
