@@ -1,0 +1,21 @@
+spring:
+  application.name: creditmanagement
+
+  security.oauth2.resourceserver.jwt:
+    issuer-uri: http://localhost:8180/realms/saad-meddiche-projects
+    jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
+
+# JWT Configuration
+jwt.auth.converter.resource-id: spring-applications
+jwt.auth.converter.principal-attribute: principal_username
+
+# Logging Configuration
+logging.level.org.springframework.security: DEBUG
+
+# Database Configuration
+spring.datasource:
+  url: jdbc:postgresql://localhost:5432/creditmanagement
+  username: postgres
+  password: 1234
+  driver-class-name: org.postgresql.Driver
+
