@@ -1,1 +1,5 @@
 - Article: https://medium.com/@Mo72/keycloak-integration-with-spring-boot-11c7ed448ffd
+- Description: 
+  - Simple integration of Keycloak with Spring Boot
+  - No resources , no permissions, no policies
+  - The security is based on the roles, and it is handled by spring security
