@@ -1,3 +1,5 @@
+
+
 spring:
   application.name: creditmanagement
 
@@ -18,4 +20,21 @@ spring.datasource:
   username: postgres
   password: 1234
   driver-class-name: org.postgresql.Driver
+
+policy-enforcer:
+  realm: ${REALM_NAME:saad-meddiche-projects}
+  auth-server-url: ${KEYCLOAK_URI:http://localhost:8180}
+  resource: ${CLIENT_ID:spring-applications}
+  credentials:
+    secret: ${CLIENT_SECRET:zitdLRTVPUvCKccQJbE9BOGYKa4HBd7d}
+  lazy-load-paths: true
+  paths:
+    - name: hello
+      path: /api/hello/*
+      enforcement-mode: DISABLED
+    - name: error
+      path: /error
+      enforcement-mode: DISABLED
+
+
 
